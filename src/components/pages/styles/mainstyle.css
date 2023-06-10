@@ -1,0 +1,84 @@
+.mainstyle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .mainstyle-card {
+    width: 80%;
+    max-width: 1200px;
+    padding: 20px;
+    margin: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+  }
+  
+  .mainstyle-card h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .mainstyle-card p {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  .mainstyle-card a {
+    font-size: 16px;
+  }
+
+  .mainstyle-card form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .mainstyle-card h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .mainstyle-card label {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .mainstyle-card input {
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .mainstyle-card button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  .rednotice {
+    background-color: #d10d0d;
+  }
+  
+  .mainstyle-card button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  
+  /* Styles pour les écrans de largeur inférieure à 768 pixels */
+  @media (max-width: 768px) {
+    .mainstyle-card {
+      width: 90%;
+    }
+  }
+  
+  /* Styles pour les écrans de largeur inférieure à 480 pixels */
+  @media (max-width: 480px) {
+    .mainstyle-card {
+      width: 100%;
+    }
+  }
