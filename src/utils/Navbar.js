@@ -47,7 +47,7 @@ return (
 <Stack direction='row' spacing={2}>
 <Hidden smDown>
   <Button color='inherit' component={NavLink} to='/' style={{display: width < 800 ? 'none' : 'block'}}>Home</Button>
-  <Button color='inherit' component={NavLink} to='/create' style={{display: width < 800 ? 'none' : 'block'}}>Create</Button>
+  <Button color='inherit' component={NavLink} to='/dashboard' style={{display: width < 800 ? 'none' : 'block'}}>Dashboard</Button>
   <Button color='inherit' component={NavLink} to='' style={{display: width < 800 ? 'none' : 'block'}}></Button>
   <ConnectButton style={{display: width < 800 ? 'none' : 'block'}} showBalance={false}/>
 </Hidden>
@@ -64,8 +64,8 @@ return (
     <ListItem button component={NavLink} to='/' onClick={() => setIsOpen(false)}>
       <ListItemText primary='Home'/>
     </ListItem>
-    <ListItem button component={NavLink} to='/create' onClick={() => setIsOpen(false)}>
-      <ListItemText primary='Create'/>
+    <ListItem button component={NavLink} to='/dashboard' onClick={() => setIsOpen(false)}>
+      <ListItemText primary='Dashboard'/>
     </ListItem>
     <ListItem button component={NavLink} to='' onClick={() => setIsOpen(false)}>
       <ConnectButton showBalance={false} />
