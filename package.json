@@ -3,9 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@mui/icons-material": "^5.11.16",
+    "@alchemy/aa-core": "^0.1.0-alpha.1",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.12.1",
     "@rainbow-me/rainbowkit": "^1.0.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -16,8 +18,7 @@
     "react-scripts": "5.0.1",
     "viem": "^0.3.50",
     "wagmi": "^1.0.9",
-    "web-vitals": "^2.1.4",
-    "@mui/material": "^5.12.1"
+    "web-vitals": "^2.1.4"
   },
   "scripts": {
     "start": "react-scripts start",
