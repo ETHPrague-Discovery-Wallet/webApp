@@ -18,7 +18,7 @@ function Dashboard() {
   }, [userAddress, isConnecting, isDisconnected]);
 
   // READ CONTRACT
-  const { data: authorizedAddress } = useContractRead({
+  const { data: authorizedAddress, isLoading, isSuccess, error } = useContractRead({
     address: userAddress,
     abi: abstractedABI,
     functionName: 'getAllAuthorizedAddress',
@@ -34,6 +34,10 @@ function Dashboard() {
     return "Unknown";
   }
   console.log("Auth: ",authorizedAddress);
+  console.log("erreur: ",error)
+  console.log("isSuccess: ",isSuccess)
+  console.log("isLoading: ",isLoading)
+  console.log("balance: ",balance);
   //Write 
 
   return (
