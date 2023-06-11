@@ -4,7 +4,7 @@ function Main() {
 
   return (
     <div className="mainstyle-container">
-      <h1>🌈 Discovery Wallet</h1>
+      <h1>🌈 Discovery Account</h1>
       <div className="mainstyle-card">
         <p>Discovery Account, an elegant Chrome extension built on the foundation of Trampoline, empowering users to effortlessly create and manage their own Discovery Account.
         <br></br> 
