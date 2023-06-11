@@ -6,16 +6,17 @@ function Main() {
     <div className="mainstyle-container">
       <h1>🌈 Discovery Wallet</h1>
       <div className="mainstyle-card">
-        <p>The Discovery Account project aims to provide a secure solution for guiding new blockchain users through their first DeFi transactions by adding an onChain layer to their wallet.
-        <br></br> This solution aims to not only protect users from scams and mishandling but also to offer them services as close as possible to those offered by centralized exchanges.
+        <p>Discovery Account, an elegant Chrome extension built on the foundation of Trampoline, empowering users to effortlessly create and manage their own Discovery Account.
+        <br></br> 
+This    Abstracted Account is meticulously crafted with the sole purpose of safeguarding users against scams and efficiently handling errors
         </p>
       </div>
       <h2>📚 Abstract</h2>
       <div className="mainstyle-card">
         <p>
-        Decentralized Finance (DeFi) has revolutionized the financial sector by offering lending, borrowing, trading, and other financial services without traditional intermediaries. 
-        <br></br>However, many novice users face challenges when trying to enter the DeFi ecosystem due to security concerns, technical complexity, and lack of accessibility. 
-        <br></br>With this project we aim to address these issues by providing a user-friendly and secure solution for novice users looking to explore the world of decentralized finance.
+        The growing interest of populations for blockchain solutions is pushing new users every day to make their first transactions on attractive networks such as optimistic rollups. However, embarking on this adventure is not without its dangers. Thousands of scams watch for the slightest of our errors to strip all of our tokens.
+        <br></br>It is to fight against this that Discovery Account was born. Based on the account abstraction (EIP-4337), it allows everyone to equip themselves with a new shield against fraud thanks to various defense mechanisms such as transaction analysis and a protection against the compromise of private keys. 
+        <br></br>We aim to solve these issues by providing a user-friendly and secure solution for novice and advanced users looking to explore the world of decentralized finance.
         </p>
       </div>
     </div>

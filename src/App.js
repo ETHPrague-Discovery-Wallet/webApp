@@ -14,9 +14,10 @@ import {
 import { configureChains, createConfig, WagmiConfig } from 'wagmi';
 import { mainnet, optimism, sepolia } from 'wagmi/chains';
 import { publicProvider } from 'wagmi/providers/public';
+import { scroll } from './scroll.ts'
 
 const { chains, publicClient } = configureChains(
-  [mainnet, optimism, sepolia],
+  [mainnet, optimism,scroll, sepolia],
   [
     publicProvider()
   ]
