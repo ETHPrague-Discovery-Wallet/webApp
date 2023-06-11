@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useBalance } from 'wagmi'
 import { useAccount, useContractWrite, usePrepareContractWrite, useContractRead } from 'wagmi'
 import "./styles/mainstyle.css"
 import abstractedABI from "../../abi/abstracted_abi.json"
