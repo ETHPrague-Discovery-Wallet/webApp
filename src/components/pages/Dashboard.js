@@ -34,11 +34,7 @@ function Dashboard() {
       }
       return "Unknown";
     }
-  console.log("Auth: ",authorizedAddress);
-  console.log("erreur: ",error)
-  console.log("isSuccess: ",isSuccess)
-  console.log("isLoading: ",isLoading)
-  console.log("balance: ",balance);
+  
   //Write 
 
   return (
