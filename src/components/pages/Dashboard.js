@@ -25,14 +25,15 @@ function Dashboard() {
     args: [],
     })
 
-  function getAddressName(address) {
-    for (const key in contractsData) {
-      if (contractsData.hasOwnProperty(key) && contractsData[key].op === address) {
-        return key;
+    function getAddressName(address) {
+      const addressString = address.toString();
+      for (const key in contractsData) {
+        if (contractsData.hasOwnProperty(key) && contractsData[key].op === addressString) {
+          return key;
+        }
       }
+      return "Unknown";
     }
-    return "Unknown";
-  }
   console.log("Auth: ",authorizedAddress);
   console.log("erreur: ",error)
   console.log("isSuccess: ",isSuccess)
