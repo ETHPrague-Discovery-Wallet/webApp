@@ -8,9 +8,6 @@ import contractsData from "./contractsData.json";
 
 function Dashboard() {
 
-  const factoryAddress = "0x"
-  const discoveryAccount = "0x"
-
   const { address: userAddress, isConnecting, isDisconnected } = useAccount();
   const { data: balance } = useBalance({
     address: userAddress,
@@ -22,7 +19,7 @@ function Dashboard() {
 
   // READ CONTRACT
   const { data: authorizedAddress } = useContractRead({
-    address: factoryAddress,
+    address: userAddress,
     abi: abstractedABI,
     functionName: 'getAllAuthorizedAddress',
   })
