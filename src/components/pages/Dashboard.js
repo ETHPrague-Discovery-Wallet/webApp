@@ -22,8 +22,8 @@ function Dashboard() {
     address: userAddress,
     abi: abstractedABI,
     functionName: 'getAllAuthorizedAddress',
-    enabled: !isConnecting && !isDisconnected, // Only enable when user is connected
-  })
+    args: [],
+    })
 
   function getAddressName(address) {
     for (const key in contractsData) {
