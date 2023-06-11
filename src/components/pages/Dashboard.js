@@ -1,17 +1,17 @@
-import React, { useEffect } from "react";
-import { useAccount } from 'wagmi'
+import React, { useEffect, useState } from "react";
+import { useAccount, useContractWrite, usePrepareContractWrite, useContractRead } from 'wagmi'
 import "./styles/mainstyle.css"
 import abstractedABI from "../../abi/abstracted_abi.json"
-import { useNetwork, useContractRead } from 'wagmi';
-import { useBalance } from 'wagmi'
 import contractsData from "./contractsData.json";
 
 function Dashboard() {
-
   const { address: userAddress, isConnecting, isDisconnected } = useAccount();
   const { data: balance } = useBalance({
     address: userAddress,
-  })
+  });
+
+  const [whitelistContract, setWhitelistContract] = useState([]);
+  const [customAddresses, setCustomAddresses] = useState([]);
 
   useEffect(() => {
     
@@ -23,19 +23,38 @@ function Dashboard() {
     abi: abstractedABI,
     functionName: 'getAllAuthorizedAddress',
     args: [],
-    })
+  });
 
-    function getAddressName(address) {
-      const addressString = address.toString();
-      for (const key in contractsData) {
-        if (contractsData.hasOwnProperty(key) && contractsData[key].op === addressString) {
-          return key;
-        }
+  function getAddressName(address) {
+    const addressString = address.toString();
+    for (const key in contractsData) {
+      if (contractsData.hasOwnProperty(key) && contractsData[key].op === addressString) {
+        return key;
       }
-      return "Unknown";
     }
+    return "Unknown";
+  }
   
-  //Write 
+  // WRITE CONTRACT
+  const { config: prepareConfig } = usePrepareContractWrite({
+    address: userAddress,
+    abi: abstractedABI,
+    functionName: 'initializeAddress',
+    args: [whitelistContract, customAddresses],
+  });
+  const { isLoading: isWriteLoading, isSuccess: isWriteSuccess, error: writeError, write: executeWrite } = useContractWrite(prepareConfig);
+
+  const handleAddContract = (contract) => {
+    setWhitelistContract((prevContracts) => [...prevContracts, contract]);
+  };
+
+  const handleAddCustomAddress = (address) => {
+    setCustomAddresses((prevAddresses) => [...prevAddresses, address]);
+  };
+
+  const handleSubmit = () => {
+    executeWrite();
+  };
 
   return (
     <div className="mainstyle-container">
@@ -62,6 +81,29 @@ function Dashboard() {
             ) : (
               <p>No authorized addresses found.</p>
             )}
+          </div>
+          <div className="mainstyle-card">
+            <h2>Add Contracts</h2>
+            <select onChange={(e) => handleAddContract(e.target.value)}>
+              <option value="">Select a contract</option>
+              {Object.keys(contractsData).map((key) => (
+                <option key={key} value={contractsData[key].op}>
+                  {key}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="mainstyle-card">
+            <h2>Add Custom Addresses</h2>
+            <input type="text" placeholder="Enter an address" onChange={(e) => handleAddCustomAddress(e.target.value)} />
+          </div>
+          <div className="mainstyle-card">
+            <button onClick={handleSubmit} disabled={isWriteLoading}>
+              Add Addresses
+            </button>
+            {isWriteLoading && <p>Adding addresses...</p>}
+            {isWriteSuccess && <p>Addresses added successfully.</p>}
+            {writeError && <p>Error: {writeError}</p>}
           </div>
         </>
       )}
