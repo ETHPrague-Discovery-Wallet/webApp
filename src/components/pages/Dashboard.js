@@ -97,8 +97,6 @@ function Dashboard() {
           <div className="mainstyle-card">
             <h2>Add Custom Addresses</h2>
             <input type="text" placeholder="Enter an address" onChange={(e) => handleAddCustomAddress(e.target.value)} />
-          </div>
-          <div className="mainstyle-card">
             <button onClick={handleSubmit} disabled={isWriteLoading}>
               Add Addresses
             </button>
@@ -106,6 +104,7 @@ function Dashboard() {
             {isWriteSuccess && <p>Addresses added successfully.</p>}
             {writeError && <p>Error: {writeError}</p>}
           </div>
+
         </>
       )}
     </div>
