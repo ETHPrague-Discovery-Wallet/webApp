@@ -32,6 +32,8 @@ function Dashboard() {
     }
     return "Unknown";
   }
+  console.log("Auth: ",authorizedAddress);
+  //Write 
 
   return (
     <div className="mainstyle-container">
